@@ -14,7 +14,7 @@ app.use(bodyparser.urlencoded({extended: false}))
 
 
 
-app.post('/formdata', function(req, res, next) {
+app.post('/formdata', function(req, next) {
 
 	var postData = querystring.stringify({
     'email': req.body.email,
@@ -59,7 +59,6 @@ request.on('error', function(e){
 
 request.write(postData);
 request.end();
-res.redirect('/static/thankyou.html');
 
  });
 
