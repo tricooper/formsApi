@@ -4,15 +4,14 @@ var https = require('https');
 var querystring = require('querystring');
 var express = require('express');
 var bodyparser = require('body-parser');
-var cookieParser = require('cookie-parser');
 
-// build the data object
-var app = express();
+
+
 
 app.use(bodyparser.urlencoded({extended: false}))
-app.use(cookieParser())
 
-app.use(express.static('./public'))
+
+
 
 
 app.post('/formdata', function(req, res, next) {
